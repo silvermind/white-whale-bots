@@ -241,8 +241,8 @@ export function applyMempoolTradesOnPools(pools: Array<Pool>, mempoolTrades: Arr
 				}
 			}
 		} catch (e) {
-			console.log("cannot apply trade on pools:");
-			console.log(trade);
+			console.log("cannot apply trade on pools:");			
+		        console.log(inspect(trade, { depth: null }));
 			console.log(e);
 		}
 	}
