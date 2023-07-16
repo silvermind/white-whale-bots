@@ -134,8 +134,9 @@ class InjectiveAdapter implements ChainOperatorInterface {
 		const queryResult = await this._wasmQueryClient.fetchSmartContractState(
 			address,
 			Buffer.from(JSON.stringify(queryMsg)).toString("base64"),
-		);
-		const jsonResult = JSON.parse(fromUtf8(fromBase64(String(queryResult.data))));
+		);		
+		const jsonResult = JSON.parse(fromUtf8(queryResult.data)); 
+
 		return jsonResult;
 	}
 	/**
